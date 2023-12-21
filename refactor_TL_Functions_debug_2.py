@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as ET
+from xml.etree.ElementTree import tostring
 from rdkit import Chem
 import os
 import numpy as np
@@ -140,7 +141,7 @@ def ang_diff(theta_1, theta_2):
 
 
 def tp_match(tp, hc, j, mol, pos, bi):
-    smarts = tp.get("smarts")
+    smarts = tp.get("smarts")  # tp is an xml object, which is why he can use get
     hist_E = []
     hist_l = []
     hist_u = []
@@ -149,7 +150,9 @@ def tp_match(tp, hc, j, mol, pos, bi):
             hist_E.append(float(bin.get("energy")))
             hist_l.append(float(bin.get("lower")))
             hist_u.append(float(bin.get("upper")))
-    matches = mol.GetSubstructMatches(Chem.MolFromSmarts(smarts))
+    matches = mol.GetSubstructMatches(
+        Chem.MolFromSmarts(smarts)
+    )  # its weird to put it here for readability, but its fine
     for match in matches:
         if len(match) > 4:
             continue
@@ -185,7 +188,7 @@ def tp_match(tp, hc, j, mol, pos, bi):
                     lower,
                     upper,
                     False,
-                    j,
+                    j,  # index of TP being processed
                 ]
             )
         else:
@@ -211,7 +214,7 @@ def tp_match(tp, hc, j, mol, pos, bi):
                     energy,
                     energy,
                     not_observed,
-                    j,
+                    j,  # index of TP being processed
                 ]
             )
 
@@ -228,20 +231,33 @@ def TL_lookup(mol):
     for TP in root.find("hierarchyClass[@name='GG']").iter("torsionRule"):
         tp_match(TP, "general", i, mol, positions, bond_info)
         i += 1
+    # bond_info is set by tp_match and appended to the list at the top per mol
+    print(f"bond_info: {bond_info}")
+    print(f"type of bond_info: {type(bond_info)}")
+    print(f"Number of lists in bond_info: {len(bond_info)}")
+    print(f"Number of items in first bond: {len(bond_info[0])}")
+    for index, bond in enumerate(bond_info):
+        print(f"Bond {index}: {bond}")
+        print(f"Number of items in bond: {len(bond)}")
     for bond in bond_info:
         if bond[0][1] > bond[0][2]:
+            print(f"{bond[0][1]} > {bond[0][2]}")
             bond[0].reverse()
-            bond.append(True)
+            bond.append(
+                True
+            )  # despite modifying 'bond', it modifies this list in place in bond_info
         else:
             bond.append(False)
     bond_info_red = [bond_info[0]]
-    for j in range(1, len(bond_info)):
+    print(f"bond_info_red: {bond_info_red}")
+    for j in range(1, len(bond_info)):  # note this is bond info
         atom_0 = bond_info[j][0][0]
         atom_1 = bond_info[j][0][1]
         atom_2 = bond_info[j][0][2]
         atom_3 = bond_info[j][0][3]
         unmatched = True
-        for k in range(len(bond_info_red)):
+        print(f"the value used later to compare: {bond_info[j][9]}")
+        for k in range(len(bond_info_red)):  # this is bond info red
             if (
                 bond_info_red[k][0][0] == atom_0
                 and bond_info_red[k][0][1] == atom_1
@@ -250,6 +266,11 @@ def TL_lookup(mol):
             ):
                 unmatched = False
                 if bond_info[j][9] < bond_info_red[k][9]:
+                    # j = index of TP being processed
+                    # note this compared to bond_info
+                    print(
+                        f"bond info compared to bond_info_red: {bond_info[j][9]} < {bond_info_red[k][9]}"
+                    )
                     bond_info_red[k] = bond_info[j]
                     break
         if unmatched:
