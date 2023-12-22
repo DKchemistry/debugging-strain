@@ -538,3 +538,10 @@ $$
 $$
 
 This formula applies a polynomial regression model to estimate the energy based on the angular displacement from the peak location. It's used when specific histogram data (as in the exact method) is not available, offering a generalized approach to estimating torsional energy. The initial high energy value (100) is overwritten if the torsion angle is within the specified tolerance of a known peak.
+
+
+GitHub doesn't like math, I don't get how to fix it right now: 
+
+![Alt text](image-2.png)
+
+![Alt text](image-3.png)
