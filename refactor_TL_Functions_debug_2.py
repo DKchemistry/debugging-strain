@@ -140,8 +140,15 @@ def ang_diff(theta_1, theta_2):
     return del_theta
 
 
+global_XML_smarts_counter = 0
+
+
 def tp_match(tp, hc, j, mol, pos, bi):
+    global global_XML_smarts_counter
+    global_XML_smarts_counter += 1
     smarts = tp.get("smarts")  # tp is an xml object, which is why he can use get
+    # print(f"smarts: {smarts}")
+    # it will always return 503 smarts total because that's how many are in the xml
     hist_E = []
     hist_l = []
     hist_u = []
@@ -150,9 +157,11 @@ def tp_match(tp, hc, j, mol, pos, bi):
             hist_E.append(float(bin.get("energy")))
             hist_l.append(float(bin.get("lower")))
             hist_u.append(float(bin.get("upper")))
-    matches = mol.GetSubstructMatches(
-        Chem.MolFromSmarts(smarts)
-    )  # its weird to put it here for readability, but its fine
+    matches = mol.GetSubstructMatches(Chem.MolFromSmarts(smarts))
+    # print(f"matches: {matches}")
+    # example of smarts and matches when there is a match:
+    # smarts: [*:1]~[cX3:2]!@[NX3:3]~[*:4]
+    # matches: ((18, 23, 24, 25), (18, 23, 24, 26), (22, 23, 24, 25), (22, 23, 24, 26))
     for match in matches:
         if len(match) > 4:
             continue
@@ -188,7 +197,7 @@ def tp_match(tp, hc, j, mol, pos, bi):
                     lower,
                     upper,
                     False,
-                    j,  # index of TP being processed
+                    j,
                 ]
             )
         else:
@@ -214,24 +223,38 @@ def tp_match(tp, hc, j, mol, pos, bi):
                     energy,
                     energy,
                     not_observed,
-                    j,  # index of TP being processed
+                    j,
                 ]
             )
+
+
+def get_last_elements(bond_info):
+    return [sublist[-1] for sublist in bond_info]
 
 
 def TL_lookup(mol):
     positions = mol.GetConformer().GetPositions()
     bond_info = []
-    i = 0
+    i = 0  #NOTE: that i is used where 'j' goes in tp_match() 
+
+    # iterate overall hierarchyClasses
     for HC in root.findall("hierarchyClass"):
+        # only iterate over hierarchyClasses that are not GG
         if HC.get("name") != "GG":
+            # for hierarchyClass != GG, iterate over torsionRules
+            # this makes them "specific"
+            # its going to try to match them against every torsionRules, which can't work, but i increments everytime
             for TP in HC.iter("torsionRule"):
                 tp_match(TP, "specific", i, mol, positions, bond_info)
+                # NOTE: i is used in tp_match() as j
+                # in terms of priority, this is how "specific" goes first, it has a lower i/j value
                 i += 1
+    # for hierarchyClass == GG, iterate over torsionRules like before as "general", but with a higher i/j value
     for TP in root.find("hierarchyClass[@name='GG']").iter("torsionRule"):
         tp_match(TP, "general", i, mol, positions, bond_info)
         i += 1
-    # bond_info is set by tp_match and appended to the list at the top per mol
+
+    # bond_info is set by tp_match and appended to the list at the top per mol,
     print(f"bond_info: {bond_info}")
     print(f"type of bond_info: {type(bond_info)}")
     print(f"Number of lists in bond_info: {len(bond_info)}")
@@ -239,7 +262,17 @@ def TL_lookup(mol):
     for index, bond in enumerate(bond_info):
         print(f"Bond {index}: {bond}")
         print(f"Number of items in bond: {len(bond)}")
+    # this is checking the the lists of lists in bond_info via bond
+    # bond itself is a list of lists, it looks like this
+    # Bond 0: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175]
+    # so bond[0][1] is 23 here and bond[0][2] is 24
+    # so this is checking if 23 > 24
+    # if it is, it reverses the order of the list
+    # i don't know why it does this
+
     for bond in bond_info:
+        print(f"bond[0][1]: {bond[0][1]}")
+        print(f"bond[0][2]: {bond[0][2]}")
         if bond[0][1] > bond[0][2]:
             print(f"{bond[0][1]} > {bond[0][2]}")
             bond[0].reverse()
@@ -250,14 +283,40 @@ def TL_lookup(mol):
             bond.append(False)
     bond_info_red = [bond_info[0]]
     print(f"bond_info_red: {bond_info_red}")
+    # print a new line skip here
+    print()
+    # bond_info_red: [[[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]]
+
+    # this gets weird because j starts at 0 from tp_match()
+    print(f"bond_info element 0 through 3: {bond_info[:3]}")
+    print()
+    print(f"len(bond_info): {len(bond_info)}")  # 40 for mol1
+    print(f"loop range: {range(1, len(bond_info))}")  # range(1, 40)
+    # this implmenetation of range and len will skip one element
+    # this is almost definitely a bug
+    print(f"Element being skipped: {bond_info[0]}")
+    print()
     for j in range(1, len(bond_info)):  # note this is bond info
+        if j == 1:
+            print(f"First element being processed: {bond_info[j]}")
+            print()
         atom_0 = bond_info[j][0][0]
         atom_1 = bond_info[j][0][1]
         atom_2 = bond_info[j][0][2]
         atom_3 = bond_info[j][0][3]
+        print(f"j: {j}")
+        print(f"atom_0: {atom_0}")
+        print(f"atom_1: {atom_1}")
+        print(f"atom_2: {atom_2}")
+        print(f"atom_3: {atom_3}")
         unmatched = True
-        print(f"the value used later to compare: {bond_info[j][9]}")
-        for k in range(len(bond_info_red)):  # this is bond info red
+        # print(f"the value used later to compare: {bond_info[j][9]}")
+        for k in range(len(bond_info_red)):
+            # this is bond info red
+            # this loop is not going to skip, k = 0 to start
+            # print(f"j: {j}")
+            # print(f"k: {k}")
+            # does this introduce an off by 1 error?
             if (
                 bond_info_red[k][0][0] == atom_0
                 and bond_info_red[k][0][1] == atom_1
@@ -265,17 +324,31 @@ def TL_lookup(mol):
                 and bond_info_red[k][0][3] == atom_3
             ):
                 unmatched = False
+                print(
+                    f"j: {j}, bond_info[j][0]: {bond_info[j][0]}, bond_info[j][9]: {bond_info[j][9]}"
+                )
+                print(
+                    f"k: {k}, bond_info_red[k][0]: {bond_info_red[k][0]}, bond_info_red[k][9]: {bond_info_red[k][9]}"
+                )
                 if bond_info[j][9] < bond_info_red[k][9]:
-                    # j = index of TP being processed
                     # note this compared to bond_info
                     print(
                         f"bond info compared to bond_info_red: {bond_info[j][9]} < {bond_info_red[k][9]}"
                     )
+                    print(f"CONDITION MATCHED, Replacing bond_info_red element {k} with bond_info element {j}")
                     bond_info_red[k] = bond_info[j]
                     break
+                else:
+                    print(
+                        f"bond info compared to bond_info_red: {bond_info[j][9]} >= {bond_info_red[k][9]}"
+                    )
         if unmatched:
             bond_info_red.append(bond_info[j])
     b_i_r = [bond_info_red[0]]
+    print(f"b_i_r[0]: {b_i_r[0]}")
+    print(f"b_i_r[0][3][0]: {b_i_r[0][3][0]}")
+    print(f"b_i_r[0][5]: {b_i_r[0][5]}")
+
     for j in range(1, len(bond_info_red)):
         atom_1 = bond_info_red[j][0][1]
         atom_2 = bond_info_red[j][0][2]
@@ -283,10 +356,18 @@ def TL_lookup(mol):
         for k in range(len(b_i_r)):
             if b_i_r[k][0][1] == atom_1 and b_i_r[k][0][2] == atom_2:
                 unmatched = False
+                print()
+                print(f"Match found with b_i_r: {b_i_r[k][0]} and bond_info_red element: {bond_info_red[j][0]}")
                 if bond_info_red[j][3][0] > b_i_r[k][3][0] or (
                     bond_info_red[j][5] > b_i_r[k][5]
                     and bond_info_red[j][3][0] == b_i_r[k][3][0]
                 ):
+                    print(f"CONDITION MATCHED")
+                    print(f"Comparing 'bond_info_red[{j}][3][0]': ({bond_info_red[j][3][0]}) > 'b_i_r[{k}][3][0]': ({b_i_r[k][3][0]}) or '(bond_info_red[{j}][5]': ({bond_info_red[j][5]}) > 'b_i_r[{k}][5]': ({b_i_r[k][5]}) and 'bond_info_red[{j}][3][0]': ({bond_info_red[j][3][0]}) == 'b_i_r[{k}][3][0]:' ({b_i_r[k][3][0]}))")
+                    print()
+                    print(f"Replacing b_i_r element {k} with bond_info_red element {j}")
+                    print(f"b_i_r element {k}: {b_i_r[k]}")
+                    print(f"bond_info_red element {j}: {bond_info_red[j]}")
                     b_i_r[k] = bond_info_red[j]
                     break
         if unmatched:
