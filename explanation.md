@@ -87,20 +87,24 @@ So the highlight is fine.  real issue is we should have *4 matches here*. We sho
 
 either 18 or 22 - then 23, 24 - either 25, or 26. all of these should fit. tp_match only does 2 internal filtering step in its function prior to the stuff that happens in TL_lookup, and that is checking  how long the match is and the amount of hydrogens.
 
-    for match in matches:
-        if len(match) > 4:
-            continue
-        if (
-            mol.GetAtomWithIdx(match[0]).GetSymbol() == "H"
-            or mol.GetAtomWithIdx(match[3]).GetSymbol() == "H"
+```py    
+
+for match in matches:
+    if len(match) > 4:
+        continue
+    if (
+        mol.GetAtomWithIdx(match[0]).GetSymbol() == "H"
+        or mol.GetAtomWithIdx(match[3]).GetSymbol() == "H"
         ):
-            continue
+        continue
+        
+```
 
-continue just skips it. he only allows 4 atoms to be considered (fine) and that the terminal atoms (0 and 3 here) are H, which is good. 
+`continue` just skips it. he only allows 4 atoms to be considered (good) and that the terminal atoms (0 and 3 here) are H, which is good. 
 
-The next bond he fined is already a different pattern entirely. So we've moved on from a SMARTs that should match more.  
+The next bond he fined is already a different pattern entirely. So we've moved on from a SMARTs that should match more (field 3, after the energy).  
 
-Bond 2: [[9, 8, 6, 10], -59.99827151843282, '[OX2:1][CX4:2]!@[CX4:3][N:4]', 'specific', 'exact', 0.01598285324959059, -0.03286993469690691, 0.06738657722312391, False, 252]
+`Bond 2: [[9, 8, 6, 10], -59.99827151843282,'[OX2:1][CX4:2]!@[CX4:3][N:4]', 'specific', 'exact', 0.01598285324959059, -0.03286993469690691, 0.06738657722312391, False, 252]`
 
 (remember we start at Bond 0)
 
@@ -108,24 +112,27 @@ So now we have two issues: why do we only have those two matches and not the 4, 
 
 In terms of why not 4 matches? I don't get it. To me it *should* have 4. 
 
-In terms of why is 1 reported and not the other? That has to do with how `TL_lookup` works. TL_lookup checks for several things (as far as I understand) before finalizing the data that we will write in the csv. It's the most confusing part of the code, so what follows is me figuring out in a stream of conciousness way with print statements.
+In terms of why is 1 reported and not the other? That has to do with how `TL_lookup` works. `TL_lookup` checks for several things (as far as I understand) before finalizing the data that we will write in the csv. It's the most confusing part of the code, so what follows is me figuring out in a stream of conciousness way with print statements.
 
 1. Before TL_lookup, we know that tp_match() is checking length and termiinal hydrogens. Our match passes this.
-2.  
-3. Internal Bond Order:
+   
+2. Internal Bond Order:
 
-    for bond in bond_info:
-        if bond[0][1] > bond[0][2]:
-            bond[0].reverse()
-            bond.append(True)
-        else:
-            bond.append(False)
+```python    
+for bond in bond_info:
+    if bond[0][1] > bond[0][2]:
+        bond[0].reverse()
+        bond.append(True)
+    else:
+        bond.append(False)
+```
 
 It cares about the relative ordering of bonds in a tuple. If we add some print statements to `bond` , `bond[0][1]` and `bond[0][2]`, this will make more sense. 
 
-    for index, bond in enumerate(bond_info):
-            print(f"Bond {index}: {bond}")
-
+```python
+for index, bond in enumerate(bond_info):
+    print(f"Bond {index}: {bond}")
+```
 `Bond 0: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175]
 `
 
@@ -141,27 +148,29 @@ I am not sure *why* he is checking this but both [22, 23, 24, 26] (the match) an
 
 Then his code starts doing something strange which I think is unintended. 
 
-    bond_info_red = [bond_info[0]]
-        for j in range(1, len(bond_info)):
-            atom_0 = bond_info[j][0][0]
-            atom_1 = bond_info[j][0][1]
-            atom_2 = bond_info[j][0][2]
-            atom_3 = bond_info[j][0][3]
-            unmatched = True
-            for k in range(len(bond_info_red)):
-                if (
-                    bond_info_red[k][0][0] == atom_0
-                    and bond_info_red[k][0][1] == atom_1
-                    and bond_info_red[k][0][2] == atom_2
-                    and bond_info_red[k][0][3] == atom_3
-                ):
-                    unmatched = False
-                    if bond_info[j][9] < bond_info_red[k][9]:
-                        bond_info_red[k] = bond_info[j]
-                        break
+```python
+
+bond_info_red = [bond_info[0]]
+for j in range(1, len(bond_info)):
+    atom_0 = bond_info[j][0][0]
+    atom_1 = bond_info[j][0][1]
+    atom_2 = bond_info[j][0][2]
+    atom_3 = bond_info[j][0][3]
+    unmatched = True
+    for k in range(len(bond_info_red)):
+        if (
+            bond_info_red[k][0][0] == atom_0
+            and bond_info_red[k][0][1] == atom_1
+            and bond_info_red[k][0][2] == atom_2
+            and bond_info_red[k][0][3] == atom_3
+            ):
+            unmatched = False
+            if bond_info[j][9] < bond_info_red[k][9]:
+                bond_info_red[k] = bond_info[j]
+                break
             if unmatched:
                 bond_info_red.append(bond_info[j])
-
+```
 `bond_info_red = [bond_info[0]]` is another nested list structure. Here's what it looks like 
 
 bond_info_red (which is bond_info[0] inside a list): `[[[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]]`
@@ -177,46 +186,50 @@ If you print it, you'll find that this range is kind of odd:
 loop range: range(1, 40)
 
 So when he loops through with j, it's going to start at 1 because that is how the range operator works. It's inclusive of the first digit and exclusive of the last digit. 
-
-    for j in range(1, len(bond_info)):  # note this is bond info
-        if j == 1:
-            print(f"First element being processed: {bond_info[j]}")
-
-First element being processed: [[22, 23, 24, 26], 0.44585819818713934, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.04286473150482756, 0.029821344396192107, 0.056205983956472805, False, 175, False]
-
+```python
+for j in range(1, len(bond_info)):  # note this is bond info
+    if j == 1:
+        print(f"First element being processed: {bond_info[j]}")
+```
+`First element being processed: [[22, 23, 24, 26], 0.44585819818713934, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.04286473150482756, 0.029821344396192107, 0.056205983956472805, False, 175, False]
+`
 
 So it's going to skip j = 0 here:
 
-    bond_info_red = [bond_info[0]]
-        for j in range(1, len(bond_info)):
-            atom_0 = bond_info[j][0][0]
-            atom_1 = bond_info[j][0][1]
-            atom_2 = bond_info[j][0][2]
-            atom_3 = bond_info[j][0][3]
-
-You can add a print statement to see what that is definitely happening:
-
-    print(f"Element being skipped: {bond_info[0]}")
-
-element being skipped: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]
-
-This is weird enough and I can't tell if he meant to do that. If you add print statements for j and the atoms there, it confirms this:
-
-    print(f"Element being skipped: {bond_info[0]}")
-    for j in range(1, len(bond_info)):  # note this is bond info
-        if j == 1:
-            print(f"First element being processed: {bond_info[j]}")
-            print()
+```python
+bond_info_red = [bond_info[0]]
+    for j in range(1, len(bond_info)):
         atom_0 = bond_info[j][0][0]
         atom_1 = bond_info[j][0][1]
         atom_2 = bond_info[j][0][2]
         atom_3 = bond_info[j][0][3]
-        print(f"j: {j}")
-        print(f"atom_0: {atom_0}")
-        print(f"atom_1: {atom_1}")
-        print(f"atom_2: {atom_2}")
-        print(f"atom_3: {atom_3}")
+```
+You can add a print statement to see what that is definitely happening:
 
+```python
+print(f"Element being skipped: {bond_info[0]}")
+```
+`element being skipped: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]
+`
+
+This is weird enough and I can't tell if he meant to do that. If you add print statements for j and the atoms there, it confirms this:
+
+```python
+print(f"Element being skipped: {bond_info[0]}")
+for j in range(1, len(bond_info)):  # note this is bond info
+    if j == 1:
+        print(f"First element being processed: {bond_info[j]}")
+        print()
+    atom_0 = bond_info[j][0][0]
+    atom_1 = bond_info[j][0][1]
+    atom_2 = bond_info[j][0][2]
+    atom_3 = bond_info[j][0][3]
+    print(f"j: {j}")
+    print(f"atom_0: {atom_0}")
+    print(f"atom_1: {atom_1}")
+    print(f"atom_2: {atom_2}")
+    print(f"atom_3: {atom_3}")
+```
 `Element being skipped: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]
 `
 
@@ -234,6 +247,7 @@ This is weird enough and I can't tell if he meant to do that. If you add print s
 
 The next part of the code, *does not follow this convention*, which makes me think there is an off by 1 error. 
 
+```python
     bond_info_red = [bond_info[0]]
         for j in range(1, len(bond_info)):
             atom_0 = bond_info[j][0][0]
@@ -254,7 +268,7 @@ The next part of the code, *does not follow this convention*, which makes me thi
                         break
             if unmatched:
                 bond_info_red.append(bond_info[j])
-
+```
 
 Once we get to the `for k in range(len(bond_info_red))` we are no longer skipping element zero, we are going through 0 to 39 (since len = 40). 
 
