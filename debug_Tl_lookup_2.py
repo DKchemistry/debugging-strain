@@ -43,3 +43,4 @@ for name in names_custom:
     #compare_lists(TL_custom.CI_l, TL_mol2.CI_l, name, "CI_l")
     #compare_lists(TL_custom.CI_u, TL_mol2.CI_u, name, "CI_u")
     #compare_lists(TL_custom.flags, TL_mol2.flags, name, "flags")
+

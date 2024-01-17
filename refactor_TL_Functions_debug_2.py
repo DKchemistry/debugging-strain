@@ -235,7 +235,7 @@ def get_last_elements(bond_info):
 def TL_lookup(mol):
     positions = mol.GetConformer().GetPositions()
     bond_info = []
-    i = 0  #NOTE: that i is used where 'j' goes in tp_match() 
+    i = 0  # NOTE: that i is used where 'j' goes in tp_match()
 
     # iterate overall hierarchyClasses
     for HC in root.findall("hierarchyClass"):
@@ -255,13 +255,13 @@ def TL_lookup(mol):
         i += 1
 
     # bond_info is set by tp_match and appended to the list at the top per mol,
-    print(f"bond_info: {bond_info}")
-    print(f"type of bond_info: {type(bond_info)}")
-    print(f"Number of lists in bond_info: {len(bond_info)}")
-    print(f"Number of items in first bond: {len(bond_info[0])}")
+    print(f"[TL_lookup] bond_info: {bond_info}")
+    print(f"[TL_lookup] type of bond_info: {type(bond_info)}")
+    print(f"[TL_lookup] Number of lists in bond_info: {len(bond_info)}")
+    print(f"[TL_lookup] Number of items in first bond: {len(bond_info[0])}")
     for index, bond in enumerate(bond_info):
-        print(f"Bond {index}: {bond}")
-        print(f"Number of items in bond: {len(bond)}")
+        print(f"[TL_lookup] Bond {index}: {bond}")
+        print(f"[TL_lookup] Number of items in bond: {len(bond)}")
     # this is checking the the lists of lists in bond_info via bond
     # bond itself is a list of lists, it looks like this
     # Bond 0: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175]
@@ -271,10 +271,10 @@ def TL_lookup(mol):
     # i don't know why it does this
 
     for bond in bond_info:
-        print(f"bond[0][1]: {bond[0][1]}")
-        print(f"bond[0][2]: {bond[0][2]}")
+        print(f"[TL_lookup] bond[0][1]: {bond[0][1]}")
+        print(f"[TL_lookup] bond[0][2]: {bond[0][2]}")
         if bond[0][1] > bond[0][2]:
-            print(f"{bond[0][1]} > {bond[0][2]}")
+            print(f"[TL_lookup] {bond[0][1]} > {bond[0][2]}")
             bond[0].reverse()
             bond.append(
                 True
@@ -282,33 +282,33 @@ def TL_lookup(mol):
         else:
             bond.append(False)
     bond_info_red = [bond_info[0]]
-    print(f"bond_info_red: {bond_info_red}")
+    print(f"[TL_lookup] bond_info_red: {bond_info_red}")
     # print a new line skip here
     print()
     # bond_info_red: [[[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]]
 
     # this gets weird because j starts at 0 from tp_match()
-    print(f"bond_info element 0 through 3: {bond_info[:3]}")
+    print(f"[TL_lookup] bond_info element 0 through 3: {bond_info[:3]}")
     print()
-    print(f"len(bond_info): {len(bond_info)}")  # 40 for mol1
-    print(f"loop range: {range(1, len(bond_info))}")  # range(1, 40)
+    print(f"[TL_lookup] len(bond_info): {len(bond_info)}")  # 40 for mol1
+    print(f"[TL_lookup] loop range: {range(1, len(bond_info))}")  # range(1, 40)
     # this implmenetation of range and len will skip one element
     # this is almost definitely a bug
-    print(f"Element being skipped: {bond_info[0]}")
+    print(f"[TL_lookup] Element being skipped: {bond_info[0]}")
     print()
     for j in range(1, len(bond_info)):  # note this is bond info
         if j == 1:
-            print(f"First element being processed: {bond_info[j]}")
+            print(f"[TL_lookup] First element being processed: {bond_info[j]}")
             print()
         atom_0 = bond_info[j][0][0]
         atom_1 = bond_info[j][0][1]
         atom_2 = bond_info[j][0][2]
         atom_3 = bond_info[j][0][3]
-        print(f"j: {j}")
-        print(f"atom_0: {atom_0}")
-        print(f"atom_1: {atom_1}")
-        print(f"atom_2: {atom_2}")
-        print(f"atom_3: {atom_3}")
+        print(f"[TL_lookup] j: {j}")
+        print(f"[TL_lookup] atom_0: {atom_0}")
+        print(f"[TL_lookup] atom_1: {atom_1}")
+        print(f"[TL_lookup] atom_2: {atom_2}")
+        print(f"[TL_lookup] atom_3: {atom_3}")
         unmatched = True
         # print(f"the value used later to compare: {bond_info[j][9]}")
         for k in range(len(bond_info_red)):
@@ -325,29 +325,31 @@ def TL_lookup(mol):
             ):
                 unmatched = False
                 print(
-                    f"j: {j}, bond_info[j][0]: {bond_info[j][0]}, bond_info[j][9]: {bond_info[j][9]}"
+                    f"[TL_lookup] j: {j}, bond_info[j][0]: {bond_info[j][0]}, bond_info[j][9]: {bond_info[j][9]}"
                 )
                 print(
-                    f"k: {k}, bond_info_red[k][0]: {bond_info_red[k][0]}, bond_info_red[k][9]: {bond_info_red[k][9]}"
+                    f"[TL_lookup] k: {k}, bond_info_red[k][0]: {bond_info_red[k][0]}, bond_info_red[k][9]: {bond_info_red[k][9]}"
                 )
                 if bond_info[j][9] < bond_info_red[k][9]:
                     # note this compared to bond_info
                     print(
-                        f"bond info compared to bond_info_red: {bond_info[j][9]} < {bond_info_red[k][9]}"
+                        f"[TL_lookup] bond info compared to bond_info_red: {bond_info[j][9]} < {bond_info_red[k][9]}"
                     )
-                    print(f"CONDITION MATCHED, Replacing bond_info_red element {k} with bond_info element {j}")
+                    print(
+                        f"[TL_lookup] CONDITION MATCHED, Replacing bond_info_red element {k} with bond_info element {j}"
+                    )
                     bond_info_red[k] = bond_info[j]
                     break
                 else:
                     print(
-                        f"bond info compared to bond_info_red: {bond_info[j][9]} >= {bond_info_red[k][9]}"
+                        f"[TL_lookup] bond info compared to bond_info_red: {bond_info[j][9]} >= {bond_info_red[k][9]}"
                     )
         if unmatched:
             bond_info_red.append(bond_info[j])
     b_i_r = [bond_info_red[0]]
-    print(f"b_i_r[0]: {b_i_r[0]}")
-    print(f"b_i_r[0][3][0]: {b_i_r[0][3][0]}")
-    print(f"b_i_r[0][5]: {b_i_r[0][5]}")
+    print(f"[TL_lookup] b_i_r[0]: {b_i_r[0]}")
+    print(f"[TL_lookup] b_i_r[0][3][0]: {b_i_r[0][3][0]}")
+    print(f"[TL_lookup] b_i_r[0][5]: {b_i_r[0][5]}")
 
     for j in range(1, len(bond_info_red)):
         atom_1 = bond_info_red[j][0][1]
@@ -357,19 +359,32 @@ def TL_lookup(mol):
             if b_i_r[k][0][1] == atom_1 and b_i_r[k][0][2] == atom_2:
                 unmatched = False
                 print()
-                print(f"Match found with b_i_r: {b_i_r[k][0]} and bond_info_red element: {bond_info_red[j][0]}")
+                print(
+                    f"[TL_lookup] Match found with b_i_r: {b_i_r[k][0]} and bond_info_red element: {bond_info_red[j][0]}"
+                )
                 if bond_info_red[j][3][0] > b_i_r[k][3][0] or (
                     bond_info_red[j][5] > b_i_r[k][5]
                     and bond_info_red[j][3][0] == b_i_r[k][3][0]
                 ):
-                    print(f"CONDITION MATCHED")
-                    print(f"Comparing 'bond_info_red[{j}][3][0]': ({bond_info_red[j][3][0]}) > 'b_i_r[{k}][3][0]': ({b_i_r[k][3][0]}) or '(bond_info_red[{j}][5]': ({bond_info_red[j][5]}) > 'b_i_r[{k}][5]': ({b_i_r[k][5]}) and 'bond_info_red[{j}][3][0]': ({bond_info_red[j][3][0]}) == 'b_i_r[{k}][3][0]:' ({b_i_r[k][3][0]}))")
+                    print(f"[TL_lookup] CONDITION MATCHED")
+                    print(
+                        f"[TL_lookup] Comparing 'bond_info_red[{j}][3][0]': ({bond_info_red[j][3][0]}) > 'b_i_r[{k}][3][0]': ({b_i_r[k][3][0]}) or '(bond_info_red[{j}][5]': ({bond_info_red[j][5]}) > 'b_i_r[{k}][5]': ({b_i_r[k][5]}) and 'bond_info_red[{j}][3][0]': ({bond_info_red[j][3][0]}) == 'b_i_r[{k}][3][0]:' ({b_i_r[k][3][0]}))"
+                    )
                     print()
-                    print(f"Replacing b_i_r element {k} with bond_info_red element {j}")
-                    print(f"b_i_r element {k}: {b_i_r[k]}")
-                    print(f"bond_info_red element {j}: {bond_info_red[j]}")
+                    print(
+                        f"[TL_lookup] Replacing b_i_r element {k} with bond_info_red element {j}"
+                    )
+                    print(f"[TL_lookup] b_i_r element {k}: {b_i_r[k]}")
+                    print(f"[TL_lookup] bond_info_red element {j}: {bond_info_red[j]}")
                     b_i_r[k] = bond_info_red[j]
                     break
+                else:
+                    print(
+                        f"[TL_lookup] Condition not met for bond_info_red element {j} and b_i_r element {k}"
+                    )
+                    print(
+                        f"[TL_lookup] 'bond_info_red[{j}][3][0]': ({bond_info_red[j][3][0]}) <= 'b_i_r[{k}][3][0]': ({b_i_r[k][3][0]}) and '(bond_info_red[{j}][5]': ({bond_info_red[j][5]}) <= 'b_i_r[{k}][5]': ({b_i_r[k][5]}) or 'bond_info_red[{j}][3][0]': ({bond_info_red[j][3][0]}) != 'b_i_r[{k}][3][0]:' ({b_i_r[k][3][0]})"
+                    )
         if unmatched:
             b_i_r.append(bond_info_red[j])
     for bond in b_i_r:

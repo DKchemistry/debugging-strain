@@ -17,7 +17,7 @@ when the matches are not empty, bi is written by tp_match, and the i incrementer
 so the first j values we get from tp_match is the first match. 
 
 `tp_match()` is asking what is the first xml smarts that will fit your molecule? then it will save that information. 
-
+****
 TL_lookup has logic for incrementing i, it wants to increment first by the non-general torsions, the specific ones. 
 
 then the general ones. 
@@ -486,7 +486,7 @@ I don't really follow his logic of why you would keep only one of these matches.
 
 [def]: image.png
 
-Both [18, 23, 24, 26] and [22, 23, 24, 26] are perfectly reasonable matches that describe two different torsion energies. Why wouldn't you get all their energies? I don't get what chemistry flaw begins to exist if we consider all of these torsions. I would guess the answer lies somewhere in the math used to get these energies. This is also in tp_match(). I've qupted the paper below. 
+Both [18, 23, 24, 26] and [22, 23, 24, 26] are perfectly reasonable matches that describe two different torsion energies. Why wouldn't you get all their energies? I don't get what chemistry flaw begins to exist if we consider all of these torsions. I would guess the answer lies somewhere in the math used to get these energies. This is also in tp_match(). I've quoted the paper below. 
 
 I would prefer to get all the unique torsion and account for all of them. I don't get why he would filter out this match in particular. 
 
