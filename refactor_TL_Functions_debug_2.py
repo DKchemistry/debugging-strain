@@ -275,27 +275,20 @@ def TL_lookup(mol):
         print(f"[TL_lookup] bond[0][2]: {bond[0][2]}")
         if bond[0][1] > bond[0][2]:
             print(f"[TL_lookup] {bond[0][1]} > {bond[0][2]}")
+            print(f"[TL_lookup] Reversing bond: {bond[0]}")
             bond[0].reverse()
+            print(f"[TL_lookup] Reversed bond: {bond[0]}")
             bond.append(
                 True
             )  # despite modifying 'bond', it modifies this list in place in bond_info
         else:
             bond.append(False)
     bond_info_red = [bond_info[0]]
-    print(f"[TL_lookup] bond_info_red: {bond_info_red}")
+    print(f"[TL_lookup] initialized bond_info_red: {bond_info_red}")
     # print a new line skip here
     print()
-    # bond_info_red: [[[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]]
 
-    # this gets weird because j starts at 0 from tp_match()
-    print(f"[TL_lookup] bond_info element 0 through 3: {bond_info[:3]}")
-    print()
-    print(f"[TL_lookup] len(bond_info): {len(bond_info)}")  # 40 for mol1
-    print(f"[TL_lookup] loop range: {range(1, len(bond_info))}")  # range(1, 40)
-    # this implmenetation of range and len will skip one element
-    # this is almost definitely a bug
-    print(f"[TL_lookup] Element being skipped: {bond_info[0]}")
-    print()
+
     for j in range(1, len(bond_info)):  # note this is bond info
         if j == 1:
             print(f"[TL_lookup] First element being processed: {bond_info[j]}")
@@ -316,7 +309,6 @@ def TL_lookup(mol):
             # this loop is not going to skip, k = 0 to start
             # print(f"j: {j}")
             # print(f"k: {k}")
-            # does this introduce an off by 1 error?
             if (
                 bond_info_red[k][0][0] == atom_0
                 and bond_info_red[k][0][1] == atom_1
@@ -390,6 +382,7 @@ def TL_lookup(mol):
     for bond in b_i_r:
         if bond[10]:
             bond[0].reverse()
+    print(f"[TL_lookup] final b_i_r: {b_i_r}")
     return TP_list(
         [bond[0] for bond in b_i_r],
         [bond[1] for bond in b_i_r],

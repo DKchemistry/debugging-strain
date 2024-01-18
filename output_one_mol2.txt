@@ -1,0 +1,544 @@
+[TL_lookup] bond_info: [[[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175], [[22, 23, 24, 26], 0.44585819818713934, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.04286473150482756, 0.029821344396192107, 0.056205983956472805, False, 175], [[9, 8, 6, 10], -59.99827151843282, '[OX2:1][CX4:2]!@[CX4:3][N:4]', 'specific', 'exact', 0.01598285324959059, -0.03286993469690691, 0.06738657722312391, False, 252], [[13, 16, 17, 18], -179.997919361389, '[!#1:1][CX4H2:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.00022866789331876802, -0.0032847956345907203, 0.0037593249345717616, False, 256], [[4, 5, 6, 8], 59.99348627709831, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.34528595288770225, 0.33914296320237924, 0.3514895675876632, False, 257], [[4, 5, 6, 10], -179.9972721357378, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.00016701904475946439, -0.003271267328210037, 0.003623270311644, False, 257], [[5, 6, 8, 9], 60.00831008335173, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.34522247008497436, 0.33908125045590787, 0.3514242249136928, False, 257], [[9, 8, 6, 10], -59.99827151843282, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.35087419947369325, 0.3446748133855796, 0.3571353082182267, False, 257], [[10, 13, 16, 17], 160.00531235418205, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 1.4827068581030178, 1.4420268444513091, 1.5263604988702706, False, 257], [[13, 16, 17, 18], -179.997919361389, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.0001273913361875545, -0.00331049556864238, 0.003583234433307214, False, 257], [[15, 13, 16, 17], -79.9987689699916, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 1.5149015019717655, 1.4720415536611848, 1.5610762283636115, False, 257], [[23, 18, 17, 16], 179.9954779910037, '[cH0:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.8531994323852332, 0.6854099228067111, inf, False, 315], [[23, 18, 17, 16], 179.9954779910037, '[cH0:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.635927035375576, 0.5360702853311841, 0.7553564857382117, False, 317], [[3, 4, 5, 6], -90.02673364346903, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.0007373364931437156, -0.02799348531439358, 0.03088121321641345, False, 331], [[19, 18, 17, 16], 0.27343903595492747, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 1.0408019376654853, 0.8903165100240227, 1.2452601666364487, False, 331], [[23, 18, 17, 16], 179.9954779910037, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 1.0208670222751404, 0.8755692055559379, 1.2134606224597426, False, 331], [[27, 4, 5, 6], 89.99270199528776, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.006707819673103034, -0.022299325452382023, 0.037155275308878924, False, 331], [[3, 4, 5, 6], -90.02673364346903, '[a:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.0004656275783654986, -0.022627564098542757, 0.024394637230666486, False, 332], [[19, 18, 17, 16], 0.27343903595492747, '[a:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.7049889814661965, 0.6321941045398722, 0.7876866245039783, False, 332], [[23, 18, 17, 16], 179.9954779910037, '[a:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.6711613799022959, 0.6022853946635623, 0.7487673370191554, False, 332], [[27, 4, 5, 6], 89.99270199528776, '[a:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.005030081830145503, -0.01823587815626392, 0.02914515528607179, False, 332], [[4, 5, 6, 8], 59.99348627709831, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.008505456080001451, 0.007199710557990824, 0.009813913507746966, False, 411], [[4, 5, 6, 10], -179.9972721357378, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.00022496814272154886, -0.0010619093900626764, 0.001514467729896496, False, 411], [[5, 6, 8, 9], 60.00831008335173, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.008637224431907176, 0.007330914955201329, 0.009946251112399551, False, 411], [[9, 8, 6, 10], -59.99827151843282, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.00825935879369466, 0.0069551658736368704, 0.009566244370868171, False, 411], [[10, 13, 16, 17], 160.00531235418205, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 1.9164470382232461, 1.8846109522557064, 1.9500871252036465, False, 411], [[13, 16, 17, 18], -179.997919361389, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.00017159116400300434, -0.0011150359108711427, 0.0014608375819340491, False, 411], [[15, 13, 16, 17], -79.9987689699916, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 1.9034051242307428, 1.8722561633543287, 1.93627829326668, False, 411], [[6, 5, 4, 3], -90.02673364346903, '[*:1]~[CX4:2]!@[cX3:3]~[*:4]', 'general', 'exact', 0.33957454460958936, 0.32290151818199103, 0.3566704591248904, False, 413], [[6, 5, 4, 27], 89.99270199528776, '[*:1]~[CX4:2]!@[cX3:3]~[*:4]', 'general', 'exact', 0.34422699561173953, 0.32742450890863634, 0.3614595135186883, False, 413], [[16, 17, 18, 23], 179.9954779910037, '[*:1]~[CX4:2]!@[cX3:3]~[*:4]', 'general', 'exact', 0.00014208538461539554, -0.009317906835020399, 0.009722238996901392, False, 413], [[16, 17, 18, 19], 0.2734390359549318, '[*:1]~[CX4:2]!@[cX3:3]~[*:4]', 'general', 'exact', 0.03828255731520164, 0.028152840524141742, 0.048555118988722834, False, 413], [[5, 6, 10, 13], 79.99921519154974, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1460260419977875, 1.000723109765154, 1.335376508308273, False, 417], [[8, 6, 10, 13], -159.9987199068972, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1627673850560352, 1.0137656230416119, nan, False, 417], [[15, 13, 10, 6], 80.00204637955515, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.146273326327345, 1.000884280415006, nan, False, 417], [[16, 13, 10, 6], -159.99678602096148, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1629499135175863, 1.0138763654377367, nan, False, 417], [[18, 23, 24, 25], -0.0040091720895600565, '[*:1]~[cX3:2]!@[NX3:3]~[*:4]', 'general', 'exact', 0.011318431558935454, 0.0027730810918407322, 0.019953502481186932, False, 422], [[18, 23, 24, 26], -179.99349340619358, '[*:1]~[cX3:2]!@[NX3:3]~[*:4]', 'general', 'exact', 0.0002923723486560337, -0.008097387431320269, 0.008768008995992116, False, 422], [[22, 23, 24, 25], -179.56465756770882, '[*:1]~[cX3:2]!@[NX3:3]~[*:4]', 'general', 'exact', 0.019562015577643033, 0.01077030991989908, 0.028456223581422413, False, 422], [[22, 23, 24, 26], 0.44585819818713934, '[*:1]~[cX3:2]!@[NX3:3]~[*:4]', 'general', 'exact', 0.030795923328730157, 0.021839995362236297, 0.03985872718490485, False, 422]]
+[TL_lookup] type of bond_info: <class 'list'>
+[TL_lookup] Number of lists in bond_info: 40
+[TL_lookup] Number of items in first bond: 10
+[TL_lookup] Bond 0: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 1: [[22, 23, 24, 26], 0.44585819818713934, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.04286473150482756, 0.029821344396192107, 0.056205983956472805, False, 175]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 2: [[9, 8, 6, 10], -59.99827151843282, '[OX2:1][CX4:2]!@[CX4:3][N:4]', 'specific', 'exact', 0.01598285324959059, -0.03286993469690691, 0.06738657722312391, False, 252]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 3: [[13, 16, 17, 18], -179.997919361389, '[!#1:1][CX4H2:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.00022866789331876802, -0.0032847956345907203, 0.0037593249345717616, False, 256]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 4: [[4, 5, 6, 8], 59.99348627709831, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.34528595288770225, 0.33914296320237924, 0.3514895675876632, False, 257]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 5: [[4, 5, 6, 10], -179.9972721357378, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.00016701904475946439, -0.003271267328210037, 0.003623270311644, False, 257]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 6: [[5, 6, 8, 9], 60.00831008335173, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.34522247008497436, 0.33908125045590787, 0.3514242249136928, False, 257]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 7: [[9, 8, 6, 10], -59.99827151843282, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.35087419947369325, 0.3446748133855796, 0.3571353082182267, False, 257]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 8: [[10, 13, 16, 17], 160.00531235418205, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 1.4827068581030178, 1.4420268444513091, 1.5263604988702706, False, 257]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 9: [[13, 16, 17, 18], -179.997919361389, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.0001273913361875545, -0.00331049556864238, 0.003583234433307214, False, 257]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 10: [[15, 13, 16, 17], -79.9987689699916, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 1.5149015019717655, 1.4720415536611848, 1.5610762283636115, False, 257]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 11: [[23, 18, 17, 16], 179.9954779910037, '[cH0:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.8531994323852332, 0.6854099228067111, inf, False, 315]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 12: [[23, 18, 17, 16], 179.9954779910037, '[cH0:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.635927035375576, 0.5360702853311841, 0.7553564857382117, False, 317]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 13: [[3, 4, 5, 6], -90.02673364346903, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.0007373364931437156, -0.02799348531439358, 0.03088121321641345, False, 331]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 14: [[19, 18, 17, 16], 0.27343903595492747, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 1.0408019376654853, 0.8903165100240227, 1.2452601666364487, False, 331]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 15: [[23, 18, 17, 16], 179.9954779910037, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 1.0208670222751404, 0.8755692055559379, 1.2134606224597426, False, 331]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 16: [[27, 4, 5, 6], 89.99270199528776, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.006707819673103034, -0.022299325452382023, 0.037155275308878924, False, 331]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 17: [[3, 4, 5, 6], -90.02673364346903, '[a:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.0004656275783654986, -0.022627564098542757, 0.024394637230666486, False, 332]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 18: [[19, 18, 17, 16], 0.27343903595492747, '[a:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.7049889814661965, 0.6321941045398722, 0.7876866245039783, False, 332]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 19: [[23, 18, 17, 16], 179.9954779910037, '[a:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.6711613799022959, 0.6022853946635623, 0.7487673370191554, False, 332]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 20: [[27, 4, 5, 6], 89.99270199528776, '[a:1][c:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.005030081830145503, -0.01823587815626392, 0.02914515528607179, False, 332]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 21: [[4, 5, 6, 8], 59.99348627709831, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.008505456080001451, 0.007199710557990824, 0.009813913507746966, False, 411]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 22: [[4, 5, 6, 10], -179.9972721357378, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.00022496814272154886, -0.0010619093900626764, 0.001514467729896496, False, 411]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 23: [[5, 6, 8, 9], 60.00831008335173, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.008637224431907176, 0.007330914955201329, 0.009946251112399551, False, 411]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 24: [[9, 8, 6, 10], -59.99827151843282, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.00825935879369466, 0.0069551658736368704, 0.009566244370868171, False, 411]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 25: [[10, 13, 16, 17], 160.00531235418205, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 1.9164470382232461, 1.8846109522557064, 1.9500871252036465, False, 411]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 26: [[13, 16, 17, 18], -179.997919361389, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 0.00017159116400300434, -0.0011150359108711427, 0.0014608375819340491, False, 411]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 27: [[15, 13, 16, 17], -79.9987689699916, '[*:1]~[CX4:2]!@[CX4:3]~[*:4]', 'general', 'exact', 1.9034051242307428, 1.8722561633543287, 1.93627829326668, False, 411]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 28: [[6, 5, 4, 3], -90.02673364346903, '[*:1]~[CX4:2]!@[cX3:3]~[*:4]', 'general', 'exact', 0.33957454460958936, 0.32290151818199103, 0.3566704591248904, False, 413]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 29: [[6, 5, 4, 27], 89.99270199528776, '[*:1]~[CX4:2]!@[cX3:3]~[*:4]', 'general', 'exact', 0.34422699561173953, 0.32742450890863634, 0.3614595135186883, False, 413]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 30: [[16, 17, 18, 23], 179.9954779910037, '[*:1]~[CX4:2]!@[cX3:3]~[*:4]', 'general', 'exact', 0.00014208538461539554, -0.009317906835020399, 0.009722238996901392, False, 413]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 31: [[16, 17, 18, 19], 0.2734390359549318, '[*:1]~[CX4:2]!@[cX3:3]~[*:4]', 'general', 'exact', 0.03828255731520164, 0.028152840524141742, 0.048555118988722834, False, 413]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 32: [[5, 6, 10, 13], 79.99921519154974, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1460260419977875, 1.000723109765154, 1.335376508308273, False, 417]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 33: [[8, 6, 10, 13], -159.9987199068972, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1627673850560352, 1.0137656230416119, nan, False, 417]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 34: [[15, 13, 10, 6], 80.00204637955515, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.146273326327345, 1.000884280415006, nan, False, 417]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 35: [[16, 13, 10, 6], -159.99678602096148, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1629499135175863, 1.0138763654377367, nan, False, 417]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 36: [[18, 23, 24, 25], -0.0040091720895600565, '[*:1]~[cX3:2]!@[NX3:3]~[*:4]', 'general', 'exact', 0.011318431558935454, 0.0027730810918407322, 0.019953502481186932, False, 422]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 37: [[18, 23, 24, 26], -179.99349340619358, '[*:1]~[cX3:2]!@[NX3:3]~[*:4]', 'general', 'exact', 0.0002923723486560337, -0.008097387431320269, 0.008768008995992116, False, 422]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 38: [[22, 23, 24, 25], -179.56465756770882, '[*:1]~[cX3:2]!@[NX3:3]~[*:4]', 'general', 'exact', 0.019562015577643033, 0.01077030991989908, 0.028456223581422413, False, 422]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] Bond 39: [[22, 23, 24, 26], 0.44585819818713934, '[*:1]~[cX3:2]!@[NX3:3]~[*:4]', 'general', 'exact', 0.030795923328730157, 0.021839995362236297, 0.03985872718490485, False, 422]
+[TL_lookup] Number of items in bond: 10
+[TL_lookup] bond[0][1]: 23
+[TL_lookup] bond[0][2]: 24
+[TL_lookup] bond[0][1]: 23
+[TL_lookup] bond[0][2]: 24
+[TL_lookup] bond[0][1]: 8
+[TL_lookup] bond[0][2]: 6
+[TL_lookup] 8 > 6
+[TL_lookup] Reversing bond: [9, 8, 6, 10]
+[TL_lookup] Reversed bond: [10, 6, 8, 9]
+[TL_lookup] bond[0][1]: 16
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] bond[0][1]: 5
+[TL_lookup] bond[0][2]: 6
+[TL_lookup] bond[0][1]: 5
+[TL_lookup] bond[0][2]: 6
+[TL_lookup] bond[0][1]: 6
+[TL_lookup] bond[0][2]: 8
+[TL_lookup] bond[0][1]: 8
+[TL_lookup] bond[0][2]: 6
+[TL_lookup] 8 > 6
+[TL_lookup] Reversing bond: [9, 8, 6, 10]
+[TL_lookup] Reversed bond: [10, 6, 8, 9]
+[TL_lookup] bond[0][1]: 13
+[TL_lookup] bond[0][2]: 16
+[TL_lookup] bond[0][1]: 16
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] bond[0][1]: 13
+[TL_lookup] bond[0][2]: 16
+[TL_lookup] bond[0][1]: 18
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] 18 > 17
+[TL_lookup] Reversing bond: [23, 18, 17, 16]
+[TL_lookup] Reversed bond: [16, 17, 18, 23]
+[TL_lookup] bond[0][1]: 18
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] 18 > 17
+[TL_lookup] Reversing bond: [23, 18, 17, 16]
+[TL_lookup] Reversed bond: [16, 17, 18, 23]
+[TL_lookup] bond[0][1]: 4
+[TL_lookup] bond[0][2]: 5
+[TL_lookup] bond[0][1]: 18
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] 18 > 17
+[TL_lookup] Reversing bond: [19, 18, 17, 16]
+[TL_lookup] Reversed bond: [16, 17, 18, 19]
+[TL_lookup] bond[0][1]: 18
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] 18 > 17
+[TL_lookup] Reversing bond: [23, 18, 17, 16]
+[TL_lookup] Reversed bond: [16, 17, 18, 23]
+[TL_lookup] bond[0][1]: 4
+[TL_lookup] bond[0][2]: 5
+[TL_lookup] bond[0][1]: 4
+[TL_lookup] bond[0][2]: 5
+[TL_lookup] bond[0][1]: 18
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] 18 > 17
+[TL_lookup] Reversing bond: [19, 18, 17, 16]
+[TL_lookup] Reversed bond: [16, 17, 18, 19]
+[TL_lookup] bond[0][1]: 18
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] 18 > 17
+[TL_lookup] Reversing bond: [23, 18, 17, 16]
+[TL_lookup] Reversed bond: [16, 17, 18, 23]
+[TL_lookup] bond[0][1]: 4
+[TL_lookup] bond[0][2]: 5
+[TL_lookup] bond[0][1]: 5
+[TL_lookup] bond[0][2]: 6
+[TL_lookup] bond[0][1]: 5
+[TL_lookup] bond[0][2]: 6
+[TL_lookup] bond[0][1]: 6
+[TL_lookup] bond[0][2]: 8
+[TL_lookup] bond[0][1]: 8
+[TL_lookup] bond[0][2]: 6
+[TL_lookup] 8 > 6
+[TL_lookup] Reversing bond: [9, 8, 6, 10]
+[TL_lookup] Reversed bond: [10, 6, 8, 9]
+[TL_lookup] bond[0][1]: 13
+[TL_lookup] bond[0][2]: 16
+[TL_lookup] bond[0][1]: 16
+[TL_lookup] bond[0][2]: 17
+[TL_lookup] bond[0][1]: 13
+[TL_lookup] bond[0][2]: 16
+[TL_lookup] bond[0][1]: 5
+[TL_lookup] bond[0][2]: 4
+[TL_lookup] 5 > 4
+[TL_lookup] Reversing bond: [6, 5, 4, 3]
+[TL_lookup] Reversed bond: [3, 4, 5, 6]
+[TL_lookup] bond[0][1]: 5
+[TL_lookup] bond[0][2]: 4
+[TL_lookup] 5 > 4
+[TL_lookup] Reversing bond: [6, 5, 4, 27]
+[TL_lookup] Reversed bond: [27, 4, 5, 6]
+[TL_lookup] bond[0][1]: 17
+[TL_lookup] bond[0][2]: 18
+[TL_lookup] bond[0][1]: 17
+[TL_lookup] bond[0][2]: 18
+[TL_lookup] bond[0][1]: 6
+[TL_lookup] bond[0][2]: 10
+[TL_lookup] bond[0][1]: 6
+[TL_lookup] bond[0][2]: 10
+[TL_lookup] bond[0][1]: 13
+[TL_lookup] bond[0][2]: 10
+[TL_lookup] 13 > 10
+[TL_lookup] Reversing bond: [15, 13, 10, 6]
+[TL_lookup] Reversed bond: [6, 10, 13, 15]
+[TL_lookup] bond[0][1]: 13
+[TL_lookup] bond[0][2]: 10
+[TL_lookup] 13 > 10
+[TL_lookup] Reversing bond: [16, 13, 10, 6]
+[TL_lookup] Reversed bond: [6, 10, 13, 16]
+[TL_lookup] bond[0][1]: 23
+[TL_lookup] bond[0][2]: 24
+[TL_lookup] bond[0][1]: 23
+[TL_lookup] bond[0][2]: 24
+[TL_lookup] bond[0][1]: 23
+[TL_lookup] bond[0][2]: 24
+[TL_lookup] bond[0][1]: 23
+[TL_lookup] bond[0][2]: 24
+[TL_lookup] initialized bond_info_red: [[[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]]
+
+[TL_lookup] bond_info element 0 through 3: [[[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False], [[22, 23, 24, 26], 0.44585819818713934, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.04286473150482756, 0.029821344396192107, 0.056205983956472805, False, 175, False], [[10, 6, 8, 9], -59.99827151843282, '[OX2:1][CX4:2]!@[CX4:3][N:4]', 'specific', 'exact', 0.01598285324959059, -0.03286993469690691, 0.06738657722312391, False, 252, True]]
+
+[TL_lookup] len(bond_info): 40
+[TL_lookup] loop range: range(1, 40)
+[TL_lookup] Element being skipped: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]
+
+[TL_lookup] First element being processed: [[22, 23, 24, 26], 0.44585819818713934, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.04286473150482756, 0.029821344396192107, 0.056205983956472805, False, 175, False]
+
+[TL_lookup] j: 1
+[TL_lookup] atom_0: 22
+[TL_lookup] atom_1: 23
+[TL_lookup] atom_2: 24
+[TL_lookup] atom_3: 26
+[TL_lookup] j: 2
+[TL_lookup] atom_0: 10
+[TL_lookup] atom_1: 6
+[TL_lookup] atom_2: 8
+[TL_lookup] atom_3: 9
+[TL_lookup] j: 3
+[TL_lookup] atom_0: 13
+[TL_lookup] atom_1: 16
+[TL_lookup] atom_2: 17
+[TL_lookup] atom_3: 18
+[TL_lookup] j: 4
+[TL_lookup] atom_0: 4
+[TL_lookup] atom_1: 5
+[TL_lookup] atom_2: 6
+[TL_lookup] atom_3: 8
+[TL_lookup] j: 5
+[TL_lookup] atom_0: 4
+[TL_lookup] atom_1: 5
+[TL_lookup] atom_2: 6
+[TL_lookup] atom_3: 10
+[TL_lookup] j: 6
+[TL_lookup] atom_0: 5
+[TL_lookup] atom_1: 6
+[TL_lookup] atom_2: 8
+[TL_lookup] atom_3: 9
+[TL_lookup] j: 7
+[TL_lookup] atom_0: 10
+[TL_lookup] atom_1: 6
+[TL_lookup] atom_2: 8
+[TL_lookup] atom_3: 9
+[TL_lookup] j: 7, bond_info[j][0]: [10, 6, 8, 9], bond_info[j][9]: 257
+[TL_lookup] k: 2, bond_info_red[k][0]: [10, 6, 8, 9], bond_info_red[k][9]: 252
+[TL_lookup] bond info compared to bond_info_red: 257 >= 252
+[TL_lookup] j: 8
+[TL_lookup] atom_0: 10
+[TL_lookup] atom_1: 13
+[TL_lookup] atom_2: 16
+[TL_lookup] atom_3: 17
+[TL_lookup] j: 9
+[TL_lookup] atom_0: 13
+[TL_lookup] atom_1: 16
+[TL_lookup] atom_2: 17
+[TL_lookup] atom_3: 18
+[TL_lookup] j: 9, bond_info[j][0]: [13, 16, 17, 18], bond_info[j][9]: 257
+[TL_lookup] k: 3, bond_info_red[k][0]: [13, 16, 17, 18], bond_info_red[k][9]: 256
+[TL_lookup] bond info compared to bond_info_red: 257 >= 256
+[TL_lookup] j: 10
+[TL_lookup] atom_0: 15
+[TL_lookup] atom_1: 13
+[TL_lookup] atom_2: 16
+[TL_lookup] atom_3: 17
+[TL_lookup] j: 11
+[TL_lookup] atom_0: 16
+[TL_lookup] atom_1: 17
+[TL_lookup] atom_2: 18
+[TL_lookup] atom_3: 23
+[TL_lookup] j: 12
+[TL_lookup] atom_0: 16
+[TL_lookup] atom_1: 17
+[TL_lookup] atom_2: 18
+[TL_lookup] atom_3: 23
+[TL_lookup] j: 12, bond_info[j][0]: [16, 17, 18, 23], bond_info[j][9]: 317
+[TL_lookup] k: 9, bond_info_red[k][0]: [16, 17, 18, 23], bond_info_red[k][9]: 315
+[TL_lookup] bond info compared to bond_info_red: 317 >= 315
+[TL_lookup] j: 13
+[TL_lookup] atom_0: 3
+[TL_lookup] atom_1: 4
+[TL_lookup] atom_2: 5
+[TL_lookup] atom_3: 6
+[TL_lookup] j: 14
+[TL_lookup] atom_0: 16
+[TL_lookup] atom_1: 17
+[TL_lookup] atom_2: 18
+[TL_lookup] atom_3: 19
+[TL_lookup] j: 15
+[TL_lookup] atom_0: 16
+[TL_lookup] atom_1: 17
+[TL_lookup] atom_2: 18
+[TL_lookup] atom_3: 23
+[TL_lookup] j: 15, bond_info[j][0]: [16, 17, 18, 23], bond_info[j][9]: 331
+[TL_lookup] k: 9, bond_info_red[k][0]: [16, 17, 18, 23], bond_info_red[k][9]: 315
+[TL_lookup] bond info compared to bond_info_red: 331 >= 315
+[TL_lookup] j: 16
+[TL_lookup] atom_0: 27
+[TL_lookup] atom_1: 4
+[TL_lookup] atom_2: 5
+[TL_lookup] atom_3: 6
+[TL_lookup] j: 17
+[TL_lookup] atom_0: 3
+[TL_lookup] atom_1: 4
+[TL_lookup] atom_2: 5
+[TL_lookup] atom_3: 6
+[TL_lookup] j: 17, bond_info[j][0]: [3, 4, 5, 6], bond_info[j][9]: 332
+[TL_lookup] k: 10, bond_info_red[k][0]: [3, 4, 5, 6], bond_info_red[k][9]: 331
+[TL_lookup] bond info compared to bond_info_red: 332 >= 331
+[TL_lookup] j: 18
+[TL_lookup] atom_0: 16
+[TL_lookup] atom_1: 17
+[TL_lookup] atom_2: 18
+[TL_lookup] atom_3: 19
+[TL_lookup] j: 18, bond_info[j][0]: [16, 17, 18, 19], bond_info[j][9]: 332
+[TL_lookup] k: 11, bond_info_red[k][0]: [16, 17, 18, 19], bond_info_red[k][9]: 331
+[TL_lookup] bond info compared to bond_info_red: 332 >= 331
+[TL_lookup] j: 19
+[TL_lookup] atom_0: 16
+[TL_lookup] atom_1: 17
+[TL_lookup] atom_2: 18
+[TL_lookup] atom_3: 23
+[TL_lookup] j: 19, bond_info[j][0]: [16, 17, 18, 23], bond_info[j][9]: 332
+[TL_lookup] k: 9, bond_info_red[k][0]: [16, 17, 18, 23], bond_info_red[k][9]: 315
+[TL_lookup] bond info compared to bond_info_red: 332 >= 315
+[TL_lookup] j: 20
+[TL_lookup] atom_0: 27
+[TL_lookup] atom_1: 4
+[TL_lookup] atom_2: 5
+[TL_lookup] atom_3: 6
+[TL_lookup] j: 20, bond_info[j][0]: [27, 4, 5, 6], bond_info[j][9]: 332
+[TL_lookup] k: 12, bond_info_red[k][0]: [27, 4, 5, 6], bond_info_red[k][9]: 331
+[TL_lookup] bond info compared to bond_info_red: 332 >= 331
+[TL_lookup] j: 21
+[TL_lookup] atom_0: 4
+[TL_lookup] atom_1: 5
+[TL_lookup] atom_2: 6
+[TL_lookup] atom_3: 8
+[TL_lookup] j: 21, bond_info[j][0]: [4, 5, 6, 8], bond_info[j][9]: 411
+[TL_lookup] k: 4, bond_info_red[k][0]: [4, 5, 6, 8], bond_info_red[k][9]: 257
+[TL_lookup] bond info compared to bond_info_red: 411 >= 257
+[TL_lookup] j: 22
+[TL_lookup] atom_0: 4
+[TL_lookup] atom_1: 5
+[TL_lookup] atom_2: 6
+[TL_lookup] atom_3: 10
+[TL_lookup] j: 22, bond_info[j][0]: [4, 5, 6, 10], bond_info[j][9]: 411
+[TL_lookup] k: 5, bond_info_red[k][0]: [4, 5, 6, 10], bond_info_red[k][9]: 257
+[TL_lookup] bond info compared to bond_info_red: 411 >= 257
+[TL_lookup] j: 23
+[TL_lookup] atom_0: 5
+[TL_lookup] atom_1: 6
+[TL_lookup] atom_2: 8
+[TL_lookup] atom_3: 9
+[TL_lookup] j: 23, bond_info[j][0]: [5, 6, 8, 9], bond_info[j][9]: 411
+[TL_lookup] k: 6, bond_info_red[k][0]: [5, 6, 8, 9], bond_info_red[k][9]: 257
+[TL_lookup] bond info compared to bond_info_red: 411 >= 257
+[TL_lookup] j: 24
+[TL_lookup] atom_0: 10
+[TL_lookup] atom_1: 6
+[TL_lookup] atom_2: 8
+[TL_lookup] atom_3: 9
+[TL_lookup] j: 24, bond_info[j][0]: [10, 6, 8, 9], bond_info[j][9]: 411
+[TL_lookup] k: 2, bond_info_red[k][0]: [10, 6, 8, 9], bond_info_red[k][9]: 252
+[TL_lookup] bond info compared to bond_info_red: 411 >= 252
+[TL_lookup] j: 25
+[TL_lookup] atom_0: 10
+[TL_lookup] atom_1: 13
+[TL_lookup] atom_2: 16
+[TL_lookup] atom_3: 17
+[TL_lookup] j: 25, bond_info[j][0]: [10, 13, 16, 17], bond_info[j][9]: 411
+[TL_lookup] k: 7, bond_info_red[k][0]: [10, 13, 16, 17], bond_info_red[k][9]: 257
+[TL_lookup] bond info compared to bond_info_red: 411 >= 257
+[TL_lookup] j: 26
+[TL_lookup] atom_0: 13
+[TL_lookup] atom_1: 16
+[TL_lookup] atom_2: 17
+[TL_lookup] atom_3: 18
+[TL_lookup] j: 26, bond_info[j][0]: [13, 16, 17, 18], bond_info[j][9]: 411
+[TL_lookup] k: 3, bond_info_red[k][0]: [13, 16, 17, 18], bond_info_red[k][9]: 256
+[TL_lookup] bond info compared to bond_info_red: 411 >= 256
+[TL_lookup] j: 27
+[TL_lookup] atom_0: 15
+[TL_lookup] atom_1: 13
+[TL_lookup] atom_2: 16
+[TL_lookup] atom_3: 17
+[TL_lookup] j: 27, bond_info[j][0]: [15, 13, 16, 17], bond_info[j][9]: 411
+[TL_lookup] k: 8, bond_info_red[k][0]: [15, 13, 16, 17], bond_info_red[k][9]: 257
+[TL_lookup] bond info compared to bond_info_red: 411 >= 257
+[TL_lookup] j: 28
+[TL_lookup] atom_0: 3
+[TL_lookup] atom_1: 4
+[TL_lookup] atom_2: 5
+[TL_lookup] atom_3: 6
+[TL_lookup] j: 28, bond_info[j][0]: [3, 4, 5, 6], bond_info[j][9]: 413
+[TL_lookup] k: 10, bond_info_red[k][0]: [3, 4, 5, 6], bond_info_red[k][9]: 331
+[TL_lookup] bond info compared to bond_info_red: 413 >= 331
+[TL_lookup] j: 29
+[TL_lookup] atom_0: 27
+[TL_lookup] atom_1: 4
+[TL_lookup] atom_2: 5
+[TL_lookup] atom_3: 6
+[TL_lookup] j: 29, bond_info[j][0]: [27, 4, 5, 6], bond_info[j][9]: 413
+[TL_lookup] k: 12, bond_info_red[k][0]: [27, 4, 5, 6], bond_info_red[k][9]: 331
+[TL_lookup] bond info compared to bond_info_red: 413 >= 331
+[TL_lookup] j: 30
+[TL_lookup] atom_0: 16
+[TL_lookup] atom_1: 17
+[TL_lookup] atom_2: 18
+[TL_lookup] atom_3: 23
+[TL_lookup] j: 30, bond_info[j][0]: [16, 17, 18, 23], bond_info[j][9]: 413
+[TL_lookup] k: 9, bond_info_red[k][0]: [16, 17, 18, 23], bond_info_red[k][9]: 315
+[TL_lookup] bond info compared to bond_info_red: 413 >= 315
+[TL_lookup] j: 31
+[TL_lookup] atom_0: 16
+[TL_lookup] atom_1: 17
+[TL_lookup] atom_2: 18
+[TL_lookup] atom_3: 19
+[TL_lookup] j: 31, bond_info[j][0]: [16, 17, 18, 19], bond_info[j][9]: 413
+[TL_lookup] k: 11, bond_info_red[k][0]: [16, 17, 18, 19], bond_info_red[k][9]: 331
+[TL_lookup] bond info compared to bond_info_red: 413 >= 331
+[TL_lookup] j: 32
+[TL_lookup] atom_0: 5
+[TL_lookup] atom_1: 6
+[TL_lookup] atom_2: 10
+[TL_lookup] atom_3: 13
+[TL_lookup] j: 33
+[TL_lookup] atom_0: 8
+[TL_lookup] atom_1: 6
+[TL_lookup] atom_2: 10
+[TL_lookup] atom_3: 13
+[TL_lookup] j: 34
+[TL_lookup] atom_0: 6
+[TL_lookup] atom_1: 10
+[TL_lookup] atom_2: 13
+[TL_lookup] atom_3: 15
+[TL_lookup] j: 35
+[TL_lookup] atom_0: 6
+[TL_lookup] atom_1: 10
+[TL_lookup] atom_2: 13
+[TL_lookup] atom_3: 16
+[TL_lookup] j: 36
+[TL_lookup] atom_0: 18
+[TL_lookup] atom_1: 23
+[TL_lookup] atom_2: 24
+[TL_lookup] atom_3: 25
+[TL_lookup] j: 37
+[TL_lookup] atom_0: 18
+[TL_lookup] atom_1: 23
+[TL_lookup] atom_2: 24
+[TL_lookup] atom_3: 26
+[TL_lookup] j: 37, bond_info[j][0]: [18, 23, 24, 26], bond_info[j][9]: 422
+[TL_lookup] k: 0, bond_info_red[k][0]: [18, 23, 24, 26], bond_info_red[k][9]: 175
+[TL_lookup] bond info compared to bond_info_red: 422 >= 175
+[TL_lookup] j: 38
+[TL_lookup] atom_0: 22
+[TL_lookup] atom_1: 23
+[TL_lookup] atom_2: 24
+[TL_lookup] atom_3: 25
+[TL_lookup] j: 39
+[TL_lookup] atom_0: 22
+[TL_lookup] atom_1: 23
+[TL_lookup] atom_2: 24
+[TL_lookup] atom_3: 26
+[TL_lookup] j: 39, bond_info[j][0]: [22, 23, 24, 26], bond_info[j][9]: 422
+[TL_lookup] k: 1, bond_info_red[k][0]: [22, 23, 24, 26], bond_info_red[k][9]: 175
+[TL_lookup] bond info compared to bond_info_red: 422 >= 175
+[TL_lookup] b_i_r[0]: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]
+[TL_lookup] b_i_r[0][3][0]: s
+[TL_lookup] b_i_r[0][5]: 0.0002475159675178751
+
+[TL_lookup] Match found with b_i_r: [18, 23, 24, 26] and bond_info_red element: [22, 23, 24, 26]
+[TL_lookup] CONDITION MATCHED
+[TL_lookup] Comparing 'bond_info_red[1][3][0]': (s) > 'b_i_r[0][3][0]': (s) or '(bond_info_red[1][5]': (0.04286473150482756) > 'b_i_r[0][5]': (0.0002475159675178751) and 'bond_info_red[1][3][0]': (s) == 'b_i_r[0][3][0]:' (s))
+
+[TL_lookup] Replacing b_i_r element 0 with bond_info_red element 1
+[TL_lookup] b_i_r element 0: [[18, 23, 24, 26], -179.99349340619358, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.0002475159675178751, -0.011782303262766858, 0.012522277005268923, False, 175, False]
+[TL_lookup] bond_info_red element 1: [[22, 23, 24, 26], 0.44585819818713934, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.04286473150482756, 0.029821344396192107, 0.056205983956472805, False, 175, False]
+
+[TL_lookup] Match found with b_i_r: [4, 5, 6, 8] and bond_info_red element: [4, 5, 6, 10]
+[TL_lookup] Condition not met for bond_info_red element 5 and b_i_r element 3
+[TL_lookup] 'bond_info_red[5][3][0]': (s) <= 'b_i_r[3][3][0]': (s) and '(bond_info_red[5][5]': (0.00016701904475946439) <= 'b_i_r[3][5]': (0.34528595288770225) or 'bond_info_red[5][3][0]': (s) != 'b_i_r[3][3][0]:' (s)
+
+[TL_lookup] Match found with b_i_r: [10, 6, 8, 9] and bond_info_red element: [5, 6, 8, 9]
+[TL_lookup] CONDITION MATCHED
+[TL_lookup] Comparing 'bond_info_red[6][3][0]': (s) > 'b_i_r[1][3][0]': (s) or '(bond_info_red[6][5]': (0.34522247008497436) > 'b_i_r[1][5]': (0.01598285324959059) and 'bond_info_red[6][3][0]': (s) == 'b_i_r[1][3][0]:' (s))
+
+[TL_lookup] Replacing b_i_r element 1 with bond_info_red element 6
+[TL_lookup] b_i_r element 1: [[10, 6, 8, 9], -59.99827151843282, '[OX2:1][CX4:2]!@[CX4:3][N:4]', 'specific', 'exact', 0.01598285324959059, -0.03286993469690691, 0.06738657722312391, False, 252, True]
+[TL_lookup] bond_info_red element 6: [[5, 6, 8, 9], 60.00831008335173, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.34522247008497436, 0.33908125045590787, 0.3514242249136928, False, 257, False]
+
+[TL_lookup] Match found with b_i_r: [10, 13, 16, 17] and bond_info_red element: [15, 13, 16, 17]
+[TL_lookup] CONDITION MATCHED
+[TL_lookup] Comparing 'bond_info_red[8][3][0]': (s) > 'b_i_r[4][3][0]': (s) or '(bond_info_red[8][5]': (1.5149015019717655) > 'b_i_r[4][5]': (1.4827068581030178) and 'bond_info_red[8][3][0]': (s) == 'b_i_r[4][3][0]:' (s))
+
+[TL_lookup] Replacing b_i_r element 4 with bond_info_red element 8
+[TL_lookup] b_i_r element 4: [[10, 13, 16, 17], 160.00531235418205, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 1.4827068581030178, 1.4420268444513091, 1.5263604988702706, False, 257, False]
+[TL_lookup] bond_info_red element 8: [[15, 13, 16, 17], -79.9987689699916, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 1.5149015019717655, 1.4720415536611848, 1.5610762283636115, False, 257, False]
+
+[TL_lookup] Match found with b_i_r: [16, 17, 18, 23] and bond_info_red element: [16, 17, 18, 19]
+[TL_lookup] CONDITION MATCHED
+[TL_lookup] Comparing 'bond_info_red[11][3][0]': (s) > 'b_i_r[5][3][0]': (s) or '(bond_info_red[11][5]': (1.0408019376654853) > 'b_i_r[5][5]': (0.8531994323852332) and 'bond_info_red[11][3][0]': (s) == 'b_i_r[5][3][0]:' (s))
+
+[TL_lookup] Replacing b_i_r element 5 with bond_info_red element 11
+[TL_lookup] b_i_r element 5: [[16, 17, 18, 23], 179.9954779910037, '[cH0:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.8531994323852332, 0.6854099228067111, inf, False, 315, True]
+[TL_lookup] bond_info_red element 11: [[16, 17, 18, 19], 0.27343903595492747, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 1.0408019376654853, 0.8903165100240227, 1.2452601666364487, False, 331, True]
+
+[TL_lookup] Match found with b_i_r: [3, 4, 5, 6] and bond_info_red element: [27, 4, 5, 6]
+[TL_lookup] CONDITION MATCHED
+[TL_lookup] Comparing 'bond_info_red[12][3][0]': (s) > 'b_i_r[6][3][0]': (s) or '(bond_info_red[12][5]': (0.006707819673103034) > 'b_i_r[6][5]': (0.0007373364931437156) and 'bond_info_red[12][3][0]': (s) == 'b_i_r[6][3][0]:' (s))
+
+[TL_lookup] Replacing b_i_r element 6 with bond_info_red element 12
+[TL_lookup] b_i_r element 6: [[3, 4, 5, 6], -90.02673364346903, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.0007373364931437156, -0.02799348531439358, 0.03088121321641345, False, 331, False]
+[TL_lookup] bond_info_red element 12: [[27, 4, 5, 6], 89.99270199528776, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.006707819673103034, -0.022299325452382023, 0.037155275308878924, False, 331, False]
+
+[TL_lookup] Match found with b_i_r: [5, 6, 10, 13] and bond_info_red element: [8, 6, 10, 13]
+[TL_lookup] CONDITION MATCHED
+[TL_lookup] Comparing 'bond_info_red[14][3][0]': (g) > 'b_i_r[7][3][0]': (g) or '(bond_info_red[14][5]': (1.1627673850560352) > 'b_i_r[7][5]': (1.1460260419977875) and 'bond_info_red[14][3][0]': (g) == 'b_i_r[7][3][0]:' (g))
+
+[TL_lookup] Replacing b_i_r element 7 with bond_info_red element 14
+[TL_lookup] b_i_r element 7: [[5, 6, 10, 13], 79.99921519154974, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1460260419977875, 1.000723109765154, 1.335376508308273, False, 417, False]
+[TL_lookup] bond_info_red element 14: [[8, 6, 10, 13], -159.9987199068972, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1627673850560352, 1.0137656230416119, nan, False, 417, False]
+
+[TL_lookup] Match found with b_i_r: [6, 10, 13, 15] and bond_info_red element: [6, 10, 13, 16]
+[TL_lookup] CONDITION MATCHED
+[TL_lookup] Comparing 'bond_info_red[16][3][0]': (g) > 'b_i_r[8][3][0]': (g) or '(bond_info_red[16][5]': (1.1629499135175863) > 'b_i_r[8][5]': (1.146273326327345) and 'bond_info_red[16][3][0]': (g) == 'b_i_r[8][3][0]:' (g))
+
+[TL_lookup] Replacing b_i_r element 8 with bond_info_red element 16
+[TL_lookup] b_i_r element 8: [[6, 10, 13, 15], 80.00204637955515, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.146273326327345, 1.000884280415006, nan, False, 417, True]
+[TL_lookup] bond_info_red element 16: [[6, 10, 13, 16], -159.99678602096148, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1629499135175863, 1.0138763654377367, nan, False, 417, True]
+
+[TL_lookup] Match found with b_i_r: [22, 23, 24, 26] and bond_info_red element: [18, 23, 24, 25]
+[TL_lookup] Condition not met for bond_info_red element 17 and b_i_r element 0
+[TL_lookup] 'bond_info_red[17][3][0]': (g) <= 'b_i_r[0][3][0]': (s) and '(bond_info_red[17][5]': (0.011318431558935454) <= 'b_i_r[0][5]': (0.04286473150482756) or 'bond_info_red[17][3][0]': (g) != 'b_i_r[0][3][0]:' (s)
+
+[TL_lookup] Match found with b_i_r: [22, 23, 24, 26] and bond_info_red element: [22, 23, 24, 25]
+[TL_lookup] Condition not met for bond_info_red element 18 and b_i_r element 0
+[TL_lookup] 'bond_info_red[18][3][0]': (g) <= 'b_i_r[0][3][0]': (s) and '(bond_info_red[18][5]': (0.019562015577643033) <= 'b_i_r[0][5]': (0.04286473150482756) or 'bond_info_red[18][3][0]': (g) != 'b_i_r[0][3][0]:' (s)
+
+[TL_lookup] final b_i_r: [[[22, 23, 24, 26], 0.44585819818713934, '[a:1][a:2]!@[NX3:3][!#1:4]', 'specific', 'exact', 0.04286473150482756, 0.029821344396192107, 0.056205983956472805, False, 175, False], [[5, 6, 8, 9], 60.00831008335173, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.34522247008497436, 0.33908125045590787, 0.3514242249136928, False, 257, False], [[13, 16, 17, 18], -179.997919361389, '[!#1:1][CX4H2:2]!@[CX4H2:3][!#1:4]', 'specific', 'exact', 0.00022866789331876802, -0.0032847956345907203, 0.0037593249345717616, False, 256, False], [[4, 5, 6, 8], 59.99348627709831, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 0.34528595288770225, 0.33914296320237924, 0.3514895675876632, False, 257, False], [[15, 13, 16, 17], -79.9987689699916, '[!#1:1][CX4:2]!@[CX4:3][!#1:4]', 'specific', 'exact', 1.5149015019717655, 1.4720415536611848, 1.5610762283636115, False, 257, False], [[19, 18, 17, 16], 0.27343903595492747, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 1.0408019376654853, 0.8903165100240227, 1.2452601666364487, False, 331, True], [[27, 4, 5, 6], 89.99270199528776, '[a:1][c:2]!@[CX4H2:3][CX4:4]', 'specific', 'exact', 0.006707819673103034, -0.022299325452382023, 0.037155275308878924, False, 331, False], [[8, 6, 10, 13], -159.9987199068972, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1627673850560352, 1.0137656230416119, nan, False, 417, False], [[16, 13, 10, 6], -159.99678602096148, '[*:1]~[CX4:2]!@[NX4:3]~[*:4]', 'general', 'exact', 1.1629499135175863, 1.0138763654377367, nan, False, 417, True]]
