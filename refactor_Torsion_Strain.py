@@ -31,7 +31,9 @@ if os.path.exists(args.OutputFile):
     print("The output file already exists. Please choose a different name.")
     exit()
 
-if args.InputFile[-5:] == ".mol2":
+if "schrodinger" in args.InputFile:
+    names, ms = rtf.schrodinger_supplier_function(args.InputFile)
+elif args.InputFile[-5:] == ".mol2":
     names, ms = rtf.Mol2MolSupplier(args.InputFile)
 elif args.InputFile[-4:] == ".sdf":
     names, ms = rtf.custom_sdmolsupplier_H(args.InputFile)

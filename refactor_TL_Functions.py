@@ -112,6 +112,25 @@ def custom_sdmolsupplier_H(file_path):
     return names, mol
 
 
+def schrodinger_supplier_function(file_path):
+    if not file_path:
+        raise ValueError("File path is required.")
+    suppl_H = Chem.SDMolSupplier(file_path, removeHs=False, sanitize=False)
+    names = []
+    mol = {}
+    for mol_H in suppl_H:
+        if mol_H is not None:
+            name_H = (
+                mol_H.GetProp("_Name")
+                if mol_H.HasProp("_Name")
+                else f"UnnamedMol_{len(names)}"
+            )
+            name_H = name_H.split()[0]
+            names.append(name_H)
+            mol[name_H] = mol_H
+    return names, mol
+
+
 def unit(a):
     return a / sqrt(np.dot(a, a))
 
